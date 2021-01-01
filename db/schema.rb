@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2021_01_01_083940) do
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["picture_id"], name: "index_articles_on_picture_id"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
@@ -84,7 +83,6 @@ ActiveRecord::Schema.define(version: 2021_01_01_083940) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "articles", "pictures"
   add_foreign_key "articles", "users"
   add_foreign_key "point_records", "users"
   add_foreign_key "receipts", "users"

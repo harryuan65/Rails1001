@@ -18,4 +18,9 @@ ActiveRecord::Base.transaction do
 
   user.receipts.create!(platform: ios_receipt)
   user.receipts.create!(platform: android_receipt)
+  user.pictures.create!(asset: "bfc3ef5a69c8831ce4e7d72be8f32d843ccd05591526ece39c4932ed3f4f")
+  article = user.articles.create!(title: "Hello Rails", content: "Why Node? Go Rails!")
+  picture = Picture.create!(asset: "bd6292de54ed8a0c3870ba500e21b2ffae4a87e42580479550c6fe797026", imageable: article)
+  article.picture = picture
+  article.save!
 end
