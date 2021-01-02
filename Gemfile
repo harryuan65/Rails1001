@@ -40,3 +40,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "devise", "~> 4.7"
 
 gem "annotate", "~> 3.1"
+# gem 'erm', path: "/Users/harry/Library/Mobile Documents/com~apple~CloudDocs/MyTechs/development/ruby/erm"

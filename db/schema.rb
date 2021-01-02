@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_01_083940) do
+ActiveRecord::Schema.define(version: 2021_01_02_031333) do
 
   create_table "android_receipts", force: :cascade do |t|
     t.string "product_type"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2021_01_01_083940) do
     t.integer "picture_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["picture_id"], name: "index_users_on_picture_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
