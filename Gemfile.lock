@@ -82,6 +82,8 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.10.0)
+    faker (2.15.1)
+      i18n (>= 1.6, < 2)
     ffi (1.14.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -107,6 +109,7 @@ GEM
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
+    pg (1.2.3)
     puma (5.1.1)
       nio4r (~> 2.0)
     rack (2.2.3)
@@ -155,7 +158,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thor (1.0.1)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
@@ -174,12 +176,13 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   devise (~> 4.7)
+  faker
   listen (~> 3.3)
+  pg
   puma (~> 5.0)
   rails (~> 6.1.0)
   routes_doc_gen!
   scenic
-  sqlite3 (~> 1.4)
   tzinfo-data
 
 RUBY VERSION
