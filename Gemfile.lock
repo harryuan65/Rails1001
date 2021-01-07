@@ -1,3 +1,8 @@
+PATH
+  remote: /Users/harry/Library/Mobile Documents/com~apple~CloudDocs/MyTechs/development/ruby/routes_doc_gen
+  specs:
+    routes_doc_gen (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -166,10 +171,10 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   devise (~> 4.7)
-  erm!
   listen (~> 3.3)
   puma (~> 5.0)
   rails (~> 6.1.0)
+  routes_doc_gen!
   sqlite3 (~> 1.4)
   tzinfo-data
 

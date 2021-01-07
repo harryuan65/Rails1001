@@ -41,3 +41,4 @@ gem "devise", "~> 4.7"
 
 gem "annotate", "~> 3.1"
 # gem 'erm', path: "/Users/harry/Library/Mobile Documents/com~apple~CloudDocs/MyTechs/development/ruby/erm"
+gem 'routes_doc_gen', path: "/Users/harry/Library/Mobile Documents/com~apple~CloudDocs/MyTechs/development/ruby/routes_doc_gen"
