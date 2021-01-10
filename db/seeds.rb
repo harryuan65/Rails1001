@@ -23,4 +23,18 @@ ActiveRecord::Base.transaction do
   picture = Picture.create!(asset: "bd6292de54ed8a0c3870ba500e21b2ffae4a87e42580479550c6fe797026", imageable: article)
   article.picture = picture
   article.save!
+
+  times = 40.times.map do
+    t = rand(10.days).seconds.ago
+    [t , t + rand(900.minutes)]
+  end.sort_by{|a| a[0]}
+
+  user_ids = User.all.map(&:id)
+
+  times.each do |arr|
+    VideoWatchingHistory.create!(user_id: user_ids.sample, video_id: video_ids.sample, start_time: arr[0], created_at: arr[0], end_time: arr[1], updated_at: arr[1])
+  end
+
+  times = 40.times.map{ rand(2.day).seconds.ago }.sort
+  User.order(id: :asc).each.with_index{|user, i| user.update created_at: times[i]}
 end

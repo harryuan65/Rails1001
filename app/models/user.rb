@@ -26,5 +26,8 @@ class User < ApplicationRecord
   has_many :articles
   has_one :last_article, ->{select("distinct on (user_id) *").order("user_id desc, created_at desc")}, class_name: "Article"
   enum role: {normal: 0, admin: 1}
+  def self.country_codes
+    ["TW", "RU", "US", "JP", "HK", "CN"]
+  end
   # has_many :ios_receipts, through: :join_association, source: :source_association_name, foreign_key: :key_name, source_type: :actual_association_model_type
 end
