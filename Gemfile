@@ -37,11 +37,11 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+# gem 'erm', path: "/Users/harry/Library/Mobile Documents/com~apple~CloudDocs/MyTechs/development/ruby/erm"
+gem 'routes_doc_gen', path: "/Users/harry/Library/Mobile Documents/com~apple~CloudDocs/MyTechs/development/ruby/routes_doc_gen"
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "devise", "~> 4.7"
 
 gem "annotate", "~> 3.1"
-# gem 'erm', path: "/Users/harry/Library/Mobile Documents/com~apple~CloudDocs/MyTechs/development/ruby/erm"
-gem 'routes_doc_gen', path: "/Users/harry/Library/Mobile Documents/com~apple~CloudDocs/MyTechs/development/ruby/routes_doc_gen"
 gem 'scenic'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_07_134224) do
+ActiveRecord::Schema.define(version: 2021_01_10_121419) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,4 +108,44 @@ ActiveRecord::Schema.define(version: 2021_01_07_134224) do
   add_foreign_key "receipts", "users"
   add_foreign_key "user_point_infos", "users"
   add_foreign_key "users", "pictures"
+
+  create_view "new_users_count_by_country", sql_definition: <<-SQL
+      SELECT users.country_code,
+      count(users.id) AS count
+     FROM users
+    WHERE (users.created_at > (now() - 'P1D'::interval))
+    GROUP BY users.country_code;
+  SQL
+  create_view "count_new_users_by_country_m", materialized: true, sql_definition: <<-SQL
+      SELECT users.country_code,
+      count(users.id) AS count
+     FROM users
+    WHERE (users.created_at > (now() - 'P1D'::interval))
+    GROUP BY users.country_code;
+  SQL
+  add_index "count_new_users_by_country_m", ["country_code"], name: "country_code_new_users_idx", unique: true
+  add_index "count_new_users_by_country_m", ["country_code"], name: "new_user_country_code_idx"
+
+  create_view "user_video_report", materialized: true, sql_definition: <<-SQL
+      SELECT vwh.user_id,
+      v.id AS video_id,
+      v.name AS video_name,
+      sum((vwh.end_time - vwh.start_time)) AS time_used
+     FROM (video_watching_histories vwh
+       JOIN videos v ON ((v.id = vwh.video_id)))
+    GROUP BY vwh.user_id, v.id, v.name
+    ORDER BY (sum((vwh.end_time - vwh.start_time))) DESC;
+  SQL
+  add_index "user_video_report", ["user_id", "video_id"], name: "user_id_video_report_idx", unique: true
+
+  create_view "user_video_reports", materialized: true, sql_definition: <<-SQL
+      SELECT vwh.user_id,
+      v.id AS video_id,
+      v.name AS video_name,
+      sum((vwh.end_time - vwh.start_time)) AS time_used
+     FROM (video_watching_histories vwh
+       JOIN videos v ON ((v.id = vwh.video_id)))
+    GROUP BY vwh.user_id, v.id, v.name
+    ORDER BY (sum((vwh.end_time - vwh.start_time))) DESC;
+  SQL
 end
