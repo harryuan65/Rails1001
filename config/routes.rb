@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root "home#index"
   resources :articles
   devise_for :users, controllers: {
     confirmations: "users/confirmations",
