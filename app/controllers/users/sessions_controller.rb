@@ -4,9 +4,10 @@ class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
-  # def new
-  #   super
-  # end
+  def new
+    # render json: {msg: 'why there is no sign_in page but 200 rendered new?'}
+    render 'users/sessions/new'
+  end
 
   # POST /resource/sign_in
   # def create

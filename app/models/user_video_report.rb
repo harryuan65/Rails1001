@@ -1,3 +1,4 @@
+# models/user_video_report.rb
 class UserVideoReport < ApplicationRecord
   def readonly?
     true

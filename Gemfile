@@ -41,7 +41,11 @@ end
 gem 'routes_doc_gen', path: "/Users/harry/Library/Mobile Documents/com~apple~CloudDocs/MyTechs/development/ruby/routes_doc_gen"
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pry-rails'
-gem "devise", "~> 4.7"
+
+gem "elastic-apm", "~> 4.0"
 
 gem "annotate", "~> 3.1"
+gem "devise", "~> 4.7"
+
 gem 'scenic'
+

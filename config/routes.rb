@@ -8,5 +8,11 @@ Rails.application.routes.draw do
     sessions: "users/sessions",
     unlocks: "users/unlocks"
   }
+  resources :video_watching_histories do
+    collection do
+      get :summary
+      get :summary2
+    end
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
