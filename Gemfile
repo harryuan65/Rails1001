@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.2'
+ruby '3.0.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.0'
@@ -38,11 +38,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem 'erm', path: "/Users/harry/Library/Mobile Documents/com~apple~CloudDocs/MyTechs/development/ruby/erm"
-gem 'routes_doc_gen', path: "/Users/harry/Library/Mobile Documents/com~apple~CloudDocs/MyTechs/development/ruby/routes_doc_gen"
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pry-rails'
 
-gem "elastic-apm", "~> 4.0"
+# gem "elastic-apm", "~> 4.0"
 
 gem "annotate", "~> 3.1"
 gem "devise", "~> 4.7"
