@@ -48,3 +48,5 @@ gem "devise", "~> 4.7"
 
 gem 'scenic'
 
+
+gem 'cheese_api', path: 'cheese_api'
