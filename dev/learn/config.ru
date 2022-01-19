@@ -35,4 +35,5 @@ class MyMiddleware
 end
 
 use MyMiddleware
-run Proc.new {|env| [200, {'Content-Type'=>'text/html; charset=utf-8'}, ['我剛剛前面有放一個 middleware']] }
+run(Proc.new {|_env| [200, {'Content-Type'=>'text/html; charset=utf-8'}, ['我剛剛前面有放一個 middleware']] })
+# Rack::Handler.default.run
