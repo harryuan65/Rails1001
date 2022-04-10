@@ -16,4 +16,3 @@ end
 x = Foo.new
 p x.my_method
 # so: but prepend overwrites
-puts Foo.ancestors
