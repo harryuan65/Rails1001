@@ -1,8 +1,8 @@
 require: rubocop-rails
 
 AllCops:
-  DisabledByDefault: true
-  TargetRubyVersion: 2.7.2
+  DisabledByDefault: false
+  TargetRubyVersion: 3.0.3
   NewCops: enable
 Rails:
   Enabled: true
